@@ -1,6 +1,8 @@
+import { StyledButton } from './Button.styles.ts';
+
 const Button = () => {
   return(
-    <button>Button</button>
+    <StyledButton>Button</StyledButton>
   )
 }
 

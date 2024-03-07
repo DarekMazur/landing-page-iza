@@ -1,6 +1,13 @@
+import { StyledFooterCopyright } from './FooterCopyright.styles.ts';
+
 const FooterCopyright = () => {
+  const getYear = () => {
+    const currentDate = new Date();
+    return currentDate.getFullYear();
+  };
+
   return(
-    <p>2024 &copy; IAM</p>
+    <StyledFooterCopyright>{getYear()} &copy; IAM</StyledFooterCopyright>
   )
 }
 
