@@ -1,11 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconName } from '@fortawesome/free-solid-svg-icons';
 import { StyledIcon } from './Icon.styles.ts';
+import { IconName } from '@fortawesome/free-solid-svg-icons';
 
-const Icon = ({icon, type}: {type: 'fas' | 'fab', icon: IconName}) => {
-  <StyledIcon>
-    <FontAwesomeIcon icon={[type, icon]} />
-  </StyledIcon>
+const Icon = ({icon, type}: {type: 'fas' | 'fab', icon: string}) => {
+  return(
+    <StyledIcon>
+      <FontAwesomeIcon icon={[type, icon as IconName]} />
+    </StyledIcon>
+    )
 }
 
 export default Icon;
