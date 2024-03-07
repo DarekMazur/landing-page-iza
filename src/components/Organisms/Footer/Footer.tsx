@@ -1,7 +1,9 @@
+import FooterInfo from '../../Molecules/FooterInfo/FooterInfo.tsx';
+
 const Footer = () => {
   return(
     <footer>
-      Some footer content
+      <FooterInfo />
     </footer>
   )
 }
