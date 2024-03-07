@@ -4,18 +4,20 @@ import AvatarSeparator from './components/Organisms/AvatarSeparator/AvatarSepara
 import FromInsta from './components/Organisms/FromInsta/FromInsta.tsx';
 import Footer from './components/Organisms/Footer/Footer.tsx';
 import { GlobalStyle } from './styles/GlobalStyle.ts';
+import { theme } from './utils/themes/theme.ts';
+import { ThemeProvider } from 'styled-components';
 
 const App = () => {
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header />
       <Navigation />
       <AvatarSeparator />
       <FromInsta />
       <Footer />
-    </>
+    </ThemeProvider>
   )
 }
 

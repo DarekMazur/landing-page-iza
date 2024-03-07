@@ -10,11 +10,15 @@ export const GlobalStyle = createGlobalStyle`
 	html {
       box-sizing: border-box;
       font-size: 62.5%;
+      font-family: ${({theme}) => theme.fonts.main};
+      background-color: ${({ theme }) => theme.colors.grey};
     }
   
   body {
       margin: 0;
       padding: 0;
+      font-size: ${({theme}) => theme.fontSize.m};
+      color: ${({ theme }) => theme.colors.orange};
   }
 
     *, *::after, *::before {
