@@ -1,7 +1,9 @@
+import Avatar from '../../Atoms/Avatar/Avatar.tsx';
+
 const AvatarSeparator = () => {
   return(
     <section>
-      Separator with image
+      <Avatar />
     </section>
   )
 }
