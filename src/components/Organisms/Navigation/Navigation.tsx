@@ -1,7 +1,11 @@
+import Button from '../../Atoms/Button/Button.tsx';
+
 const Navigation = () => {
   return(
     <nav>
-      navigation section
+      <Button/>
+      <Button/>
+      <Button/>
     </nav>
   )
 }
