@@ -24,15 +24,16 @@ const Socials = () => {
     {
       social: 'Blog',
       type: 'fas',
-      icon: 'house-solid',
+      icon: 'fa-house',
       link: 'https://siewypowiem.pl'
     }
   ]
   return(
     <>
-      {socialsList.map(({ social, type, icon }) => {
+      <p>Lorem</p>
+      {socialsList.map(({ social, type, icon }) =>
         <Icon key={social} type={type} icon={icon} />
-      })}
+      )}
     </>
   )
 }
