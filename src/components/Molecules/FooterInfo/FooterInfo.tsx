@@ -1,12 +1,15 @@
 import Icon from '../../Atoms/Icon/Icon.tsx';
 import { faker } from '@faker-js/faker';
+import { StyledFooterInfo } from './FooterInfo.styles.ts';
 
 const FooterInfo = () => {
   return(
-    <div>
-      <Icon type={'fas'} icon={'fa-at'} />
-      <a href=''>{faker.internet.email()}</a>
-    </div>
+    <StyledFooterInfo>
+      <a href="">
+        <Icon type={'fas'} icon={'fa-at'} size={1.3} />
+        {faker.internet.email()}
+      </a>
+    </StyledFooterInfo>
   )
 }
 
