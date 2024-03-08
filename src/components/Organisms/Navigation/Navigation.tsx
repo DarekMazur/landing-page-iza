@@ -1,12 +1,13 @@
 import Button from '../../Atoms/Button/Button.tsx';
+import { StyledNavigation } from './Navigation.styles.ts';
 
 const Navigation = () => {
   return(
-    <nav>
+    <StyledNavigation>
       <Button/>
       <Button/>
       <Button/>
-    </nav>
+    </StyledNavigation>
   )
 }
 
