@@ -35,15 +35,15 @@ export const socialMediaList: ISocialItem[] = [
 
 export const navigationList: INavigationItem[] = [
   {
-    title: faker.lorem.word(),
+    title: 'Blog',
     url: faker.internet.url()
   },
   {
-    title: faker.lorem.word(),
+    title: 'Podcast',
     url: faker.internet.url()
   },
   {
-    title: faker.lorem.word(),
+    title: 'Inspiracje',
     url: faker.internet.url()
   },
 ]
