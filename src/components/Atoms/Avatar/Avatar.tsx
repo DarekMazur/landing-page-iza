@@ -1,10 +1,10 @@
-import { faker } from '@faker-js/faker';
 import { StyledAvatar } from './Avatar.styles.ts';
+import avatar from '../../../assets/author.jpg'
 
 const Avatar = () => {
   return(
     <div>
-      <StyledAvatar src={faker.image.avatar()} alt={''} />
+      <StyledAvatar src={avatar} alt={''} />
     </div>
   )
 }
