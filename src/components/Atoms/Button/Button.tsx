@@ -1,8 +1,8 @@
 import { StyledButton } from './Button.styles.ts';
 
-const Button = () => {
+const Button = ({title}: {title: string}) => {
   return(
-    <StyledButton>Button</StyledButton>
+    <StyledButton>{title}</StyledButton>
   )
 }
 
