@@ -20,6 +20,18 @@ export const GlobalStyle = createGlobalStyle`
       font-size: ${({theme}) => theme.fontSize.m};
       color: ${({ theme }) => theme.colors.orange};
   }
+  
+  h1 {
+      font-size: ${({theme}) => theme.fontSize.xl};
+  }
+  
+  h2 {
+      font-size: ${({theme}) => theme.fontSize.l};
+  }
+  
+  h3, h4, h5, h6 {
+      font-size: ${({theme}) => theme.fontSize.m}
+  }
 
     *, *::after, *::before {
       box-sizing: inherit;
