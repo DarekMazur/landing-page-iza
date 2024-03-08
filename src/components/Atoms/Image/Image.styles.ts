@@ -4,4 +4,5 @@ export const StyledImage = styled.img`
     width: 15.5rem;
     height: 15.5rem;
     object-fit: cover;
+    margin: 1.4rem 0;
 `
