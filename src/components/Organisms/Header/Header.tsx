@@ -1,11 +1,12 @@
 import Socials from '../../Molecules/Socials/Socials.tsx';
+import { StyledHeader } from './Header.styles.ts';
 
 const Header = () => {
   return(
-    <header>
+    <StyledHeader>
       Lorem Ipsum
       <Socials />
-    </header>
+    </StyledHeader>
   )
 }
 
