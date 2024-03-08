@@ -1,10 +1,9 @@
 import { StyledTitle } from './Title.styles.ts';
-import { faker } from '@faker-js/faker';
 
-const Title = () => {
+const Title = ({content}: {content: string}) => {
   return (
     <StyledTitle>
-      {faker.person.firstName() + ' ' + faker.person.lastName()}
+      {content}
     </StyledTitle>
   );
 }

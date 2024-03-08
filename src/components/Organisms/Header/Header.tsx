@@ -5,7 +5,7 @@ import Title from '../../Atoms/Title/Title.tsx';
 const Header = () => {
   return(
     <StyledHeader>
-      <Title />
+      <Title content={'I am Jillian'} />
       <Socials />
     </StyledHeader>
   )
