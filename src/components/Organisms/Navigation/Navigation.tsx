@@ -6,7 +6,7 @@ const Navigation = () => {
   return(
     <StyledNavigation>
       {navigationList.map(navigationItem => (
-        <a key={navigationItem.title} href={navigationItem.url} target={'_blank'}><Button title={navigationItem.title}/></a>
+        <Button key={navigationItem.title} title={navigationItem.title} target={navigationItem.url}/>
       ))}
     </StyledNavigation>
   )
