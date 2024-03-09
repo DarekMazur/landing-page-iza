@@ -17,7 +17,7 @@ export const socialMediaList: ISocialItem[] = [
     social: 'Instagram',
     type: 'fab',
     icon: 'instagram',
-    link: 'https://www.instagram.com/',
+    link: `https://www.instagram.com/${import.meta.env.VITE_IG_URL}`,
   },
   {
     social: 'Facebook',
@@ -36,7 +36,7 @@ export const socialMediaList: ISocialItem[] = [
 export const navigationList: INavigationItem[] = [
   {
     title: 'Blog',
-    url: faker.internet.url()
+    url: 'https://siewypowiem.pl'
   },
   {
     title: 'Podcast',
@@ -44,6 +44,6 @@ export const navigationList: INavigationItem[] = [
   },
   {
     title: 'Inspiracje',
-    url: faker.internet.url()
+    url: `https://www.instagram.com/stories/highlights/${import.meta.env.VITE_IG_HIGHLIGHTS_ID}/`
   },
 ]
