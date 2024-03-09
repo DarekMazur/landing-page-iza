@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '../../../utils/themes/theme.ts';
 
 export const StyledButton = styled.button`
     width: 25rem;
@@ -11,5 +12,9 @@ export const StyledButton = styled.button`
     a {
         color: inherit;
         text-decoration: none;
+    }
+
+    @media (min-width: ${theme.breakpoints.desktop}px) {
+        width: 40rem;
     }
 `
