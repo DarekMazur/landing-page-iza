@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '../../../utils/themes/theme.ts';
 
 export const StyledFromInsta= styled.section`
     display: flex;
@@ -16,5 +17,9 @@ export const StyledFromInsta= styled.section`
         &:hover {
             transform: scale(1.1);
         }
+    }
+
+    @media (min-width: ${theme.breakpoints.desktop}px) {
+        margin: 1.5rem 0 7rem;
     }
 `
