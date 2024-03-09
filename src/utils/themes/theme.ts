@@ -27,7 +27,7 @@ export const theme = {
 
   breakpoints: {
     wide: '1440',
-    desktop: '1080',
+    desktop: '800',
     mobile: '400',
   },
 };
