@@ -10,8 +10,12 @@ export const StyledButton = styled.button`
     margin: 1.5rem auto;
     
     a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: inherit;
         text-decoration: none;
+        height: 100%;
     }
 
     @media (min-width: ${theme.breakpoints.desktop}px) {
