@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '../../../utils/themes/theme.ts';
 
 export const StyledButton = styled.button`
     width: 25rem;
@@ -7,4 +8,8 @@ export const StyledButton = styled.button`
     color: ${({ theme }) => theme.colors.orange};
     font-size: ${({ theme }) => theme.fontSize.l};
     margin: 1.5rem auto;
+
+    @media (min-width: ${theme.breakpoints.desktop}px) {
+        width: 40rem;
+    }
 `
