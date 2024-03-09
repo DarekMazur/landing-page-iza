@@ -8,7 +8,7 @@ const FromInsta = () => {
     <StyledFromInsta>
       <Heading tag={'h3'}>Ostatnio na Instagramie</Heading>
       <Image />
-      <a href='https://instagram.com' target={'_blank'}>Zobacz więcej <Icon type={'fas'} icon={'fa-arrow-up-right-from-square'} size={1.3} padding={'0.5rem 0'} /></a>
+      <a href={`https://instagram.com/${import.meta.env.VITE_IG_URL}`} target={'_blank'}>Zobacz więcej <Icon type={'fas'} icon={'fa-arrow-up-right-from-square'} size={1.3} padding={'0.5rem 0'} /></a>
     </StyledFromInsta>
   )
 }
