@@ -8,6 +8,11 @@ export const StyledButton = styled.button`
     color: ${({ theme }) => theme.colors.orange};
     font-size: ${({ theme }) => theme.fontSize.l};
     margin: 1.5rem auto;
+    
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 
     @media (min-width: ${theme.breakpoints.desktop}px) {
         width: 40rem;
