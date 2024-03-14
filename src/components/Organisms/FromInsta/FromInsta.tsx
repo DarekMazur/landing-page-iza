@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 
 const FromInsta = () => {
   const [data, setData] = useState<string | never>();
+  const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -23,15 +24,25 @@ const FromInsta = () => {
         })
         .catch((error) => {
           console.log(error);
+          setError(true)
         });
     }
     fetchData();
   }, []);
   return(
     <StyledFromInsta>
-      <Heading tag={'h3'}>Ostatnio na Instagramie</Heading>
-      {data ? <Image url={data} /> : null}
-      <a href={`https://instagram.com/${import.meta.env.VITE_IG_URL}`} target={'_blank'}>Zobacz więcej <Icon type={'fas'} icon={'fa-arrow-up-right-from-square'} size={1.3} padding={'0.5rem 0'} /></a>
+      {error ? (
+        <>
+          <p>Nie udało się pobrać danych z Instagrama ☹️</p>
+          <p>Wróć za chwilę, już naprawiamy!!! 👨‍💻</p>
+        </>
+      ) : (
+        <>
+          <Heading tag={'h3'}>Ostatnio na Instagramie</Heading>
+          {data ? <Image url={data} /> : null}
+          <a href={`https://instagram.com/${import.meta.env.VITE_IG_URL}`} target={'_blank'}>Zobacz więcej <Icon type={'fas'} icon={'fa-arrow-up-right-from-square'} size={1.3} padding={'0.5rem 0'} /></a>
+        </>
+      )}
     </StyledFromInsta>
   )
 }
