@@ -1,9 +1,8 @@
-import { faker } from '@faker-js/faker';
 import { StyledImage } from './Image.styles.ts';
 
-const Image = () => {
+const Image = ({url}: {url: string}) => {
   return(
-    <StyledImage src={faker.image.urlLoremFlickr()} alt="" />
+    <StyledImage src={url} alt="" />
   )
 }
 
