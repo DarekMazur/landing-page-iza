@@ -1,5 +1,3 @@
-import { faker } from '@faker-js/faker';
-
 interface ISocialItem {
   social: string;
   type: 'fas' | 'fab';
