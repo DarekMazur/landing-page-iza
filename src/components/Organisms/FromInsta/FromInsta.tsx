@@ -5,6 +5,8 @@ import { StyledFromInsta } from './FromInsta.styles.ts';
 import { useEffect, useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import Carousel from 'nuka-carousel';
+import Wrapper from '../Wrapper/Wrapper.tsx';
 
 interface IDataType {
   media_url: string;
@@ -80,7 +82,15 @@ const FromInsta = () => {
         ) : (
           <>
             <Heading tag={'h3'}>Ostatnio na Instagramie</Heading>
-            {data.length === 1 ? (<Image url={data[0]} />) : data.map(item => <Image url={item} />)}
+            {data.length === 1 ? (
+              <Image url={data[0]} />
+            ) : (
+              <Wrapper>
+                <Carousel autoplay={true} autoplayInterval={5000} wrapAround={true} withoutControls={true} >
+                  {data.map(item => <Image key={item} url={item} />)}
+                </Carousel>
+              </Wrapper>
+            )}
             <a href={`https://instagram.com/${import.meta.env.VITE_IG_URL}`} target={'_blank'}>Zobacz więcej <Icon type={'fas'} icon={'fa-arrow-up-right-from-square'} size={1.3} padding={'0.5rem 0'} /></a>
           </>
         )}
