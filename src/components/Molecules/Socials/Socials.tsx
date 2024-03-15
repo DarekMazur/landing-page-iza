@@ -7,7 +7,7 @@ const Socials = () => {
   return(
     <StyledSocials>
       {socialMediaList.map(({ social, type, icon, link }) =>
-        <a key={social} href={link}><Icon type={type} icon={icon} target={'_blank'} /></a>
+        <a key={social} href={link} target={'_blank'}><Icon type={type} icon={icon} /></a>
       )}
     </StyledSocials>
   )
