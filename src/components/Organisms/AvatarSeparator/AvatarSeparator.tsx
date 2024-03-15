@@ -1,12 +1,14 @@
 import Avatar from '../../Atoms/Avatar/Avatar.tsx';
-import { StyledAvatarSeparator } from './AvatarSeparator.styles.ts';
+import { SeparatorLine, StyledAvatarSeparator } from './AvatarSeparator.styles.ts';
+import { forwardRef } from 'react';
 
-const AvatarSeparator = () => {
+const AvatarSeparator = forwardRef<HTMLElement>((_props, ref) => {
   return(
-    <StyledAvatarSeparator>
+    <StyledAvatarSeparator ref={ref}>
       <Avatar />
+      <SeparatorLine />
     </StyledAvatarSeparator>
   )
-}
+})
 
 export default AvatarSeparator
