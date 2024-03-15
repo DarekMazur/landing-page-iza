@@ -6,7 +6,7 @@ import { forwardRef } from 'react';
 const Header = forwardRef<HTMLElement>((_props, ref) => {
   return(
     <StyledHeader ref={ref}>
-      <Title firstName={'Iza'} surnameFirst={'Antoszewska'} surnameLast={'Mazur'} newContent={'I am'} newContentSufix={'Jillian'} />
+      <Title firstName={'Iza'} surnameFirst={'Antoszewska'} surnameLast={'Mazur'} suffix={'Jillian'} />
       <Socials />
     </StyledHeader>
   )

@@ -10,31 +10,22 @@ interface ITitleTypes {
   firstName: string;
   surnameFirst: string;
   surnameLast: string;
-  newContent: string;
-  newContentSufix: string
+  suffix: string
 }
 
-const Title: FC<ITitleTypes> = ({firstName, surnameFirst, surnameLast, newContent, newContentSufix}) => {
-  const titleRef = useRef(null);
+const Title: FC<ITitleTypes> = ({firstName, surnameFirst, surnameLast, suffix}) => {
   const nameRef = useRef(null);
   const surnameRef = useRef(null);
   const surnameLastRef = useRef(null);
-  const sufixRef = useRef(null);
+  const suffixRef = useRef(null);
 
   useGSAP(() => {
-    gsap.to(titleRef.current, {
-      delay: 1,
-      duration: 2,
-      text: {
-        value: newContent,
-      },
-    });
-    gsap.to(sufixRef.current, {
+    gsap.to(suffixRef.current, {
       display: 'inline-block',
       delay: 1.7,
       duration: 0.1,
     });
-    gsap.to(sufixRef.current, {
+    gsap.to(suffixRef.current, {
       opacity: 1,
       delay: 3.5,
       duration: 0.5,
@@ -42,7 +33,7 @@ const Title: FC<ITitleTypes> = ({firstName, surnameFirst, surnameLast, newConten
   })
 
   useGSAP(() => {
-    gsap.set([sufixRef.current], {
+    gsap.set([suffixRef.current], {
       display: 'none',
       opacity: 0,
     })
@@ -86,7 +77,7 @@ const Title: FC<ITitleTypes> = ({firstName, surnameFirst, surnameLast, newConten
   return (
     <StyledTitle>
       <span ref={nameRef}>{firstName}</span> <span ref={surnameRef}>{surnameFirst}-</span><span
-      ref={surnameLastRef}>{surnameLast}</span> <span ref={sufixRef}>{newContentSufix}</span>
+      ref={surnameLastRef}>{surnameLast}</span> <span ref={suffixRef}>{suffix}</span>
     </StyledTitle>
   );
 }

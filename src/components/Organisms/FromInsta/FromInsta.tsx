@@ -5,10 +5,18 @@ import { StyledFromInsta } from './FromInsta.styles.ts';
 import { useEffect, useRef, useState } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import Carousel from 'nuka-carousel';
+import Wrapper from '../Wrapper/Wrapper.tsx';
+
+interface IDataType {
+  media_url: string;
+  id: string
+}
 
 const FromInsta = () => {
-  const [data, setData] = useState<string | never>();
+  const [data, setData] = useState<string[]>([]);
   const [error, setError] = useState<boolean>(false);
+  const [imageID, setImageID] = useState<string | null>();
   const instaRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -29,7 +37,11 @@ const FromInsta = () => {
           throw new Error('Something went wrong');
         })
         .then((result) => {
-          setData(result.data[0].media_url);
+          if (result.data[0].media_type === 'CAROUSEL_ALBUM') {
+            setImageID(result.data[0].id)
+          } else {
+            setData([result.data[0].media_url]);
+          }
         })
         .catch((error) => {
           console.log(error);
@@ -38,9 +50,29 @@ const FromInsta = () => {
     }
     fetchData();
   }, []);
+
+  useEffect(() => {
+      async function fetchImageCarousel() {
+        await fetch(
+          `https://graph.instagram.com/${imageID}/children?fields=media_url&access_token=${import.meta.env.VITE_IG_KEY}`
+        )
+        .then((res) => {
+          return res.json();
+        })
+          .then((result) => {
+            setData([]);
+            (result.data as IDataType[]).map(image => setData(prevState => [...prevState, image.media_url]))
+            // setData(result.data);
+          });
+      }
+    if (imageID) {
+      fetchImageCarousel()
+    }
+  }, [imageID]);
+
   return(
     <>
-    {data ? (
+    {data.length > 0 ? (
       <StyledFromInsta ref={instaRef}>
         {error ? (
           <>
@@ -50,7 +82,15 @@ const FromInsta = () => {
         ) : (
           <>
             <Heading tag={'h3'}>Ostatnio na Instagramie</Heading>
-            <Image url={data} />
+            {data.length === 1 ? (
+              <Image url={data[0]} />
+            ) : (
+              <Wrapper>
+                <Carousel autoplay={true} autoplayInterval={5000} wrapAround={true} withoutControls={true} >
+                  {data.map(item => <Image key={item} url={item} />)}
+                </Carousel>
+              </Wrapper>
+            )}
             <a href={`https://instagram.com/${import.meta.env.VITE_IG_URL}`} target={'_blank'}>Zobacz więcej <Icon type={'fas'} icon={'fa-arrow-up-right-from-square'} size={1.3} padding={'0.5rem 0'} /></a>
           </>
         )}
