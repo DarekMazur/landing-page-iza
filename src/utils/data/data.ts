@@ -23,7 +23,7 @@ export const socialMediaList: ISocialItem[] = [
     social: 'Facebook',
     type: 'fab',
     icon: 'facebook-f',
-    link: 'https://www.facebook.com/',
+    link: 'https://www.facebook.com/izabela.antoszewska.9',
   },
   {
     social: 'Blog',
@@ -40,7 +40,7 @@ export const navigationList: INavigationItem[] = [
   },
   {
     title: 'Podcast',
-    url: faker.internet.url()
+    url: '/'
   },
   {
     title: 'Inspiracje',
