@@ -41,6 +41,10 @@ export const navigationList: INavigationItem[] = [
     url: '/'
   },
   {
+    title: 'A\'Capella',
+    url: 'https://www.facebook.com/ZespolwokalnyACapella'
+  },
+  {
     title: 'Inspiracje',
     url: `https://www.instagram.com/stories/highlights/${import.meta.env.VITE_IG_HIGHLIGHTS_ID}/`
   },
